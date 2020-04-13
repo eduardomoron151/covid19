@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COVID-19</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/select2.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <div id="contenido" class="contenido">
+            <h1>COVID-19 Estadisticas por País</h1>
+            <form action="#" id="formulario">
+                <div class="row">
+                    <div class="six columns">
+                        <label for="pais">Seleccione el país:</label>
+                        <select class="" style="width: 100%" id="pais">
+                            <option value=''>-- Seleccione --</option>
+                        </select>
+                        <input class="button-primary u-full-width" type="submit" value="Buscar">
+                    </div>
+                    <div class="six columns">
+                        <div class="spinner">
+                            <div class="sk-chase">
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                                <div class="sk-chase-dot"></div>
+                            </div>
+                        </div>
+                        <div class="mensaje"></div>
+                        <div id="resultado"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/select2.min.js"></script>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
