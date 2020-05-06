@@ -4,7 +4,7 @@ class API {
   formatDate() {
     let d = new Date(),
         month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate() - 1,
+        day = '' + (d.getDate() - 1),
         year = d.getFullYear();
 
     if (month.length < 2) 
@@ -38,7 +38,7 @@ class API {
     const fecha = this.formatDate();
 
     // URL de consulta
-    const url = `https://api.covid19api.com/live/country/${pais}/status/confirmed/date/${fecha}T13:13:30Z`;
+    const url = `https://api.covid19api.com/live/country/${pais}/status/confirmed/date/${fecha}T00:00:00Z`;
 
     // Consultar la rest API
     const urlConvertir = await fetch(url);
