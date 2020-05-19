@@ -17,10 +17,10 @@ class Interfaz {
 
         // Ordena el arreglo de objetos por Country
         array.sort(function(a, b) {
-          if (a.Country > b.Country) {
+          if (a.country > b.country) {
             return 1;
           }
-          if(a.Country < b.Country){
+          if(a.country < b.country){
             return -1;
           }
           return 0
@@ -34,8 +34,8 @@ class Interfaz {
           
           // Creamos el option
           const option = document.createElement('option');
-          option.value = value.Slug;
-          option.appendChild(document.createTextNode(value.Country));
+          option.value = value.country;
+          option.appendChild(document.createTextNode(value.country));
           select.appendChild(option);
 
         }
@@ -74,25 +74,20 @@ class Interfaz {
       resultadoAnterior.remove();
     }
 
-    // Recogemos el dato
-    const resultado = datos[0];
-
     // Validamos que el dato exista
-    if(resultado) {
+    if(datos) {
 
       // Construimos el template
       let templateHTML = `
       <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Resultados</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${resultado.Country}. Latitud: ${resultado.Lat} Longitud: ${resultado.Lon}</h6>
-          <div class="card-text">Casos Registrados: <b>${resultado.Confirmed}</b></div>
-          <div class="card-text">Activos: <b>${resultado.Active}</b></div>
-          <div class="card-text">Recuperados: <b>${resultado.Recovered}</b></div>
-          <div class="card-text">Fallecidos: <b>${resultado.Deaths}</b></div>
-        </div>
-        <div class="card-footer text-muted">
-          Ultima Actualizacion ${resultado.Date}
+        <div class="card-body shadow">
+          <h5 class="card-title mb-2">Resultados de la busqueda</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${datos.country}</h6>
+          <div class="card-text">Casos Registrados: <b>${datos.cases}</b></div>
+          <div class="card-text">Activos: <b>${datos.active}</b></div>
+          <div class="card-text">Recuperados: <b>${datos.recovered}</b></div>
+          <div class="card-text">Criticos: <b>${datos.critical}</b></div>
+          <div class="card-text">Fallecidos: <b>${datos.deaths}</b></div>
         </div>
       </div>`;
 
